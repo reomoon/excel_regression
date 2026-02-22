@@ -1,3 +1,18 @@
+from tkinter import Tk, filedialog
 from core.regression_excel import regression_to_excel
 
-regression_to_excel() # core.regression_excel 폴더에서 regression_to_excel 함수 실행
+# Tkinter 창 숨기기
+root = Tk()
+root.withdraw()
+
+# Excel 파일 선택
+excel_file = filedialog.askopenfilename(
+    title="Excel 파일 선택",
+    filetypes=[("Excel files", "*.xlsx"), ("All files", "*.*")]
+)
+
+# 파일 선택 취소 시
+if not excel_file:
+    print("파일 선택이 취소되었습니다.")
+else:
+    regression_to_excel(excel_file)

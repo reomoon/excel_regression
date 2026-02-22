@@ -3,14 +3,12 @@ from openpyxl.utils import get_column_letter
 from copy import copy
 
 
-def regression_to_excel():
-    # 작업할 엑셀 파일 이름
-    excel_file = "upload/reg_upload.xlsx"
-
+def regression_to_excel(excel_file):
     # 엑셀 파일 열기
     wb = load_workbook(excel_file)
     ws = wb.active
 
+    print(f"파일 열기: {excel_file}")
     print("작업 시작...")
 
     # 1단계: 첫 줄 A~O 복사 후 3번째 줄에 붙여넣기
