@@ -1,24 +1,31 @@
 @echo off
-chcp 65001 >nul
 cd /d "%~dp0"
 
 if not exist "output" mkdir output
 if not exist "upload" mkdir upload
 
-echo.
-echo ===== 환경 확인 =====
-python --version
-echo.
+for /f "tokens=*" %%i in ('py -3 -c "import sys; print(sys.executable)"') do set PYTHON_PATH=%%i
 
-echo ===== 패키지 설치 =====
-pip install -r requirements.txt
-echo.
-
-echo ===== 프로그램 실행 =====
-python run.py
+if "%PYTHON_PATH%"=="" (
+    echo Error: Python not found
+    echo Please install Python with PATH enabled
+    pause
+    exit /b 1
+)
 
 echo.
-echo ===== 결과 폴더 열기 =====
+echo Checking environment...
+"%PYTHON_PATH%" --version
+echo.
+
+echo Installing packages...
+"%PYTHON_PATH%" -m pip install -r requirements.txt
+echo.
+
+echo Running program...
+"%PYTHON_PATH%" run.py
+
+echo.
 start "" "%CD%\output"
 
 pause
