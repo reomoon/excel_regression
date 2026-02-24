@@ -1,24 +1,21 @@
 # Excel Regression
 
-회귀 분석을 위한 자동화된 Excel 파일 처리 도구입니다.
+회귀테스트 양식 처리를 위한 자동화된 Excel 파일 도구입니다.
 
 ## 사용 방법
 
-### 단계 1: GitHub에서 다운로드
+### Step 1: GitHub에서 다운로드
 
-1. 저장소에 접속
+1. 저장소에 접속 https://github.com/reomoon/excel_regression
 2. "Code" 버튼 클릭
 3. "Download ZIP" 선택
 4. ZIP 파일을 원하는 위치에 압축 해제
+5. Bug Tracking System 두레이에서 결함목록 다운로드
 
 ### 단계 2: 프로그램 실행
 
 1. 압축 해제한 폴더 오픈
 2. `start.bat` 파일 더블클릭
-3. 프로그램이 자동으로 초기화됩니다:
-   - Python 설치 여부 확인
-   - 필수 패키지(openpyxl) 설치
-   - 파일 선택 대화창 시작
 
 ### 단계 3: Excel 파일 선택
 
@@ -28,15 +25,15 @@
 
 ### 단계 4: 결과 확인
 
-처리 완료 후:
-- `output` 폴더가 자동으로 열립니다
-- 처리된 파일 확인: `reg_output.xlsx`
+1. `output` 폴더가 자동으로 열립니다
+2. 처리된 파일 확인: `reg_output.xlsx`
 
 ## 기술 사항
 
 ### Python 경로 자동 감지
 
-배치 파일이 Python 설치 위치를 자동으로 찾으므로 PATH 환경변수 설정이 필요하지 않습니다. Python 3를 검색하여 전체 실행 경로를 사용합니다.
+- 배치 파일이 Python 설치 위치를 자동으로 찾으므로 PATH 환경변수 설정이 필요하지 않습니다. Python 3를 검색하여 전체 실행 경로를 사용합니다.
+- Python파일을 찾을 수 없을 경우 아래 문제 해결을 확인하여 해결 합니다.
 
 ### 인코딩 처리
 
@@ -73,9 +70,9 @@ project/
 
 다음과 같이 진행하세요:
 
-1. Python을 https://www.python.org에서 설치
+1. Python을 https://www.python.org에서 설치 (3.9 이상)
 2. 설치 중 "Add Python to PATH" 반드시 체크
-3. 컴퓨터 재시작
+3. 컴퓨터 재 시작
 4. `start.bat` 다시 실행
 
 ### 파일 처리 실패
