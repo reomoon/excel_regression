@@ -23,7 +23,7 @@ echo Installing packages...
 echo.
 
 echo Running program...
-"%PYTHON_PATH%" run.py
+"%PYTHON_PATH%" run_regression.py
 
 echo.
 start "" "%CD%\output"
